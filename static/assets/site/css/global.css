@@ -1,0 +1,34 @@
+body {
+    color: #5C2018;
+    background-color: #F3E0DC;
+}
+
+.navbar {
+    color: #f5f5f5;
+    background-color: #5C2018;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{
+    color: #F3E0DC;
+}
+
+.jumbotron {
+    color: #fff;
+    background-color: #BC4639;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4285F4;
+    border-color: #4285F4;
+}
+
+.btn-default {
+    color: #5C2018;
+    background-color: #D4A59A;
+    border-color: #D4A59A;
+}
+
+hr {
+    border-top: 1px solid #BC4639;
+}
