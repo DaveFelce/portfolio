@@ -1,20 +1,130 @@
-{% extends "base.html" %}
-
 {% load staticfiles %}
-{% block custom_css %}
-<link href="{% static "/tools/css/background_image.css" %}" rel="stylesheet">
-{% endblock %}
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static "assets/favicon.ico" %}">
 
-{% block content %}
-    <div class="container index-page">
-        <div class="row">
-            <div class="row vertical-offset-75">
-                <div class="col-sd-12 col-md-12 col-lg-12 centerme">
-                    Hello Dave, you beautiful man!
-                </div>
-            </div>
+    <title>David Felce portfolio</title>
+
+    <!-- Bootstrap core CSS -->
+    {% bootstrap_css %}
+    <link href="{% static "assets/site/css/global.css" %}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{% static "assets/css/ie10-viewport-bug-workaround.css" %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "assets/css/jumbotron.css" %}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">David Felce portfolio</a>
         </div>
-    </div>
-    <!-- /.container -->
-{% endblock %}
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="https://www.linkedin.com/in/david-felce-941a602/">LinkedIn profile</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="mailto:davefelce@gmail.com">Email me</a></li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
 
+    <!-- Main jumbotron for primary message and demo links -->
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-10">
+            <h2>Python &amp; Django and Modern Perl developer</h2>
+            <p>19 years professional software development, focusing on Open Source technologies, developing in UNIX/Linux environments</p>
+            <p>Coming from a background in Modern Perl, I've embraced Python and Django over the last 18 months. I now have over one year of commercial Python and Django experience, using Docker for deployment. I enjoy all the creative aspects of website and software development!</p>
+            <p>Having worked for large organisations such as the BBC and big engineering firms like Atkins, as well as small and medium sized companies, I can bring a great deal of experience to any workplace, along with knowledge of Agile in both its Scrum and Kanban forms.</p>
+            <p>
+              <a class="btn btn-primary btn-lg" href="http://estateagent.standardcandle.uk/" role="button">Estate agent</a>
+              <a class="btn btn-primary btn-lg" href="http://whatsinmyfridge.standardcandle.uk/" role="button">What's in my fridge</a>
+            </p>
+          </div>
+          <div class="col-sm-12 col-md-2">
+              <img src="/media/profile_image.jpg" alt="David Felce" width="170" height="170">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Row of content columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h4>Core skills and knowledge</h4>
+            <ul>
+              <li>Python 2 & 3 and Django</li>
+              <li>Modern Perl: Moose, Catalyst web framework, DBIx::Class, Mason and Template Toolkit</li>
+              <li>Test driven development (TDD)</li>
+              <li>Agile software development (Scrum, Kanban, Jira Agile)</li>
+              <li>Git and git workflow consultant (recent references can be provided)</li>
+              <li>RESTful interfaces particularly the Django Rest Framework</li>
+              <li>Elasticsearch</li>
+              <li>Docker</li>
+              <li>Front-end skills such as Bootstrap, JQuery, HTML5 and CSS</li>
+              <li>Postgresql, MySQL and Oracle databases, SQL</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+          <h4>Estate agent demo</h4>
+          <p>A Django app that allows estate agents to list properties for rent and sale. Properties can be searched for by users entering location and description keywords and they can also register to receive a regular email based on past search criteria.</p>
+          <p>The properties are stored in a Postgresql database, which regularly populates an Elasticsearch index. Elasticsearch is a NoSQL storage &amp; search engine.</p>
+          <p>Try searching for properties, for example 'London' for location and 'spacious luxurious' as the keywords in the property description.</p>
+          <p><a class="btn btn-default" href="http://estateagent.standardcandle.uk/" role="button">Estage agent demo &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h4>What's in my fridge demo</h4>
+          <p>A Django app that lets you enter ingredients found in your cupboards or fridge, and suggests recipes that best match what you have entered.</p>
+          <p>Elasticsearch is again used as the search engine, although recipes are entered through the Django Rest Framework powered API and live in a Postgresql database.</a></p>
+          <p>Type in a few ingredients and obseve the beautiful charts! If you hover over the recipe names on the left, you will see a popup showing the ingredient list and which ones you matched.</p>
+            <p>Try adding another recipe using the form at the bottom of the <a href="http://whatsinmyfridge.standardcandle.uk/recipes/list/">REST API list page</a>, then searching for it: </p>
+          <p><a class="btn btn-default" href="http://whatsinmyfridge.standardcandle.uk/" role="button">What's in my fridge &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2018 Standard Candle Software LTD. Contact: davefelce@gmail.com</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+    <script>window.jQuery || document.write('<script src="{% static "assets/js/vendor/jquery.min.js" %}"><\/script>')</script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static "assets/js/ie10-viewport-bug-workaround.js" %}" type="text/javascript" ></script>
+  </body>
+</html>
