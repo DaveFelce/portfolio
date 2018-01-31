@@ -6,5 +6,5 @@ services:
     volumes:
       - .:/webapp
     ports:
-      - "8002:8001"
+      - "8005:8001"
       - "8085:8082"
