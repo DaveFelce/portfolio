@@ -19,14 +19,34 @@ body {
 
 .btn-primary {
     color: #fff;
-    background-color: #4285F4;
-    border-color: #4285F4;
+    background-color: #387cea;
+    border-color: #387cea;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #246bd6;
+    border-color: #246bd6;
 }
 
 .btn-default {
     color: #5C2018;
     background-color: #D4A59A;
     border-color: #D4A59A;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active {
+    background-color: #BC4639;
+    border-color: #BC4639;
+    color: #F3E0DC;
+}
+
+a {
+    color: #4285F4;
+    text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+    color: #387cea;
 }
 
 hr {
