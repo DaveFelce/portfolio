@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  webapp:
+    build: .
+    volumes:
+      - .:/webapp
+    ports:
+      - "8002:8001"
+      - "8085:8082"
