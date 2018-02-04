@@ -1,5 +1,7 @@
 from django.views import View
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from .models import Copy
 
 class Home(View):
     """Home page class-based view
@@ -13,4 +15,5 @@ class Home(View):
         """get http method: very simple home page
         """
 
-        return render(request, 'home/index.html')
+        copy = get_object_or_404(Copy, pk=1)
+        return render(request, 'home/index.html', {'copy': copy})
