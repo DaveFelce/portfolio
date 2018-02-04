@@ -6,7 +6,7 @@ touch portfolio.log
 chmod 644 portfolio.log
 chown www-data portfolio.log
 chown www-data db.sqlite3
-chown www-data /home/davefelce/portfolio
+chown www-data /webapp
 
 chown www-data media
 
