@@ -58,10 +58,10 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-10">
-            <h2>Python &amp; Django and Modern Perl developer</h2>
-            <p>19 years professional software development, focusing on Open Source technologies, developing in UNIX/Linux environments</p>
-            <p>Coming from a background in Modern Perl, I've embraced Python and Django over the last 18 months. I now have over one year of commercial Python and Django experience, using Docker for deployment. I enjoy all the creative aspects of website and software development!</p>
-            <p>Having worked for large organisations such as the BBC and big engineering firms like Atkins, as well as small and medium sized companies, I can bring a great deal of experience to any workplace, along with knowledge of Agile in both its Scrum and Kanban forms.</p>
+            {% autoescape off %}
+            {{ copy.heading }}
+            {{ copy.intro }}
+            {% endautoescape %}
             <p>
               <a class="btn btn-primary btn-lg" href="http://estateagent.standardcandle.uk/" role="button">Estate agent</a>
               <a class="btn btn-primary btn-lg" href="http://whatsinmyfridge.standardcandle.uk/" role="button">What's in my fridge</a>
@@ -79,34 +79,15 @@
       <!-- Row of content columns -->
       <div class="row">
         <div class="col-md-4">
-          <h4>Core skills and knowledge</h4>
-            <ul>
-              <li>Python 2 & 3 and Django</li>
-              <li>Modern Perl: Moose, Catalyst web framework, DBIx::Class, Mason and Template Toolkit</li>
-              <li>Test driven development (TDD)</li>
-              <li>Agile software development (Scrum, Kanban, Jira Agile)</li>
-              <li>Git and git workflow consultant (recent references can be provided)</li>
-              <li>RESTful interfaces particularly the Django Rest Framework</li>
-              <li>Elasticsearch</li>
-              <li>Docker</li>
-              <li>Front-end skills such as Bootstrap, JQuery, HTML5 and CSS</li>
-              <li>Postgresql, MySQL and Oracle databases, SQL</li>
-            </ul>
+          {% autoescape off %}
+          {{ copy.text_column_1 }}
         </div>
         <div class="col-md-4">
-          <h4>Estate agent demo</h4>
-          <p>A Django app that allows estate agents to list properties for rent and sale. Properties can be searched for by users entering location and description keywords and they can also register to receive a regular email based on past search criteria.</p>
-          <p>The properties are stored in a Postgresql database, which regularly populates an Elasticsearch index. Elasticsearch is a NoSQL storage &amp; search engine.</p>
-          <p>Try searching for properties, for example 'London' for location and 'spacious luxurious' as the keywords in the property description.</p>
-          <p><a class="btn btn-default" href="http://estateagent.standardcandle.uk/" role="button">Estage agent demo &raquo;</a></p>
-       </div>
+          {{ copy.text_column_2 }}
+        </div>
         <div class="col-md-4">
-          <h4>What's in my fridge demo</h4>
-          <p>A Django app that lets you enter ingredients found in your cupboards or fridge, and suggests recipes that best match what you have entered.</p>
-          <p>Elasticsearch is again used as the search engine, although recipes are entered through the Django Rest Framework powered API and live in a Postgresql database.</a></p>
-          <p>Type in a few ingredients and obseve the beautiful charts! If you hover over the recipe names on the left, you will see a popup showing the ingredient list and which ones you matched.</p>
-            <p>Try adding another recipe using the form at the bottom of the <a href="http://whatsinmyfridge.standardcandle.uk/recipes/list/">REST API list page</a>, then searching for it: </p>
-          <p><a class="btn btn-default" href="http://whatsinmyfridge.standardcandle.uk/" role="button">What's in my fridge &raquo;</a></p>
+          {{ copy.text_column_3 }}
+          {% endautoescape %}
         </div>
       </div>
 

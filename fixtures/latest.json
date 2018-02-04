@@ -1,0 +1,75 @@
+[
+{
+    "model": "home.copy",
+    "pk": 1,
+    "fields": {
+        "heading": "<h2>Python &amp; Django and Modern Perl developer</h2>",
+        "intro": "<p>19 years professional software development, focusing on Open Source technologies, developing in UNIX/Linux environments</p>\r\n<p>Coming from a background in Modern Perl, I've embraced Python and Django over the last 18 months. I now have over one year of commercial Python and Django experience, using Docker for deployment. I enjoy all the creative aspects of website and software development!</p>\r\n<p>Having worked for large organisations such as the BBC and big engineering firms like Atkins, as well as small and medium sized companies, I can bring a great deal of experience to any workplace along with knowledge of Agile in both its Scrum and Kanban forms.</p>",
+        "text_column_1": "<h4>Core skills and knowledge</h4>\r\n<ul>\r\n  <li>Python 2 & 3 and Django</li>\r\n  <li>Modern Perl: Moose, Catalyst web framework, DBIx::Class, Mason and Template Toolkit</li>\r\n  <li>Test driven development (TDD)</li>\r\n  <li>Agile software development (Scrum, Kanban, Jira Agile)</li>\r\n  <li>Git and git workflow consultant (recent references can be provided)</li>\r\n  <li>RESTful interfaces particularly the Django Rest Framework</li>\r\n  <li>Elasticsearch</li>\r\n  <li>Docker</li>\r\n  <li>Front-end skills such as Bootstrap, JQuery, HTML5 and CSS</li>\r\n  <li>Postgresql, MySQL and Oracle databases, SQL</li>\r\n</ul>",
+        "text_column_2": "<h4>Estate agent demo</h4>\r\n<p>A Django app that allows estate agents to list properties for rent and sale. Properties can be searched for by users entering location and description keywords and they can also register to receive a regular email based on past search criteria.</p>\r\n<p>The properties are stored in a Postgresql database, which regularly populates an Elasticsearch index. Elasticsearch is a NoSQL storage &amp; search engine.</p>\r\n<p>Try searching for properties, for example 'London' for location and 'spacious luxurious' as the keywords in the property description.</p>\r\n<p><a class=\"btn btn-default\" href=\"http://estateagent.standardcandle.uk/\" role=\"button\">Estage agent demo &raquo;</a></p>",
+        "text_column_3": "<h4>What's in my fridge demo</h4>\r\n<p>A Django app that lets you enter ingredients found in your cupboards or fridge, and suggests recipes that best match what you have entered.</p>\r\n<p>Elasticsearch is again used as the search engine, although recipes are entered through the Django Rest Framework powered API and live in a Postgresql database.</a></p>\r\n<p>Type in a few ingredients and obseve the beautiful charts! If you hover over the recipe names on the left, you will see a popup showing the ingredient list and which ones you matched.</p>\r\n<p>Try adding another recipe using the form at the bottom of the <a href=\"http://whatsinmyfridge.standardcandle.uk/recipes/list/\">REST API list page</a>, then searching for it: </p>\r\n<p><a class=\"btn btn-default\" href=\"http://whatsinmyfridge.standardcandle.uk/\" role=\"button\">What's in my fridge &raquo;</a></p>"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$teCrtcw6kbWG$P+AXhcWVreE5apNcoIilvqSOpOKe33z9V2eVL4S0TRo=",
+        "last_login": "2018-02-04T19:14:05.315Z",
+        "is_superuser": true,
+        "username": "davidfelce",
+        "first_name": "",
+        "last_name": "",
+        "email": "davefelce@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-02-04T19:12:59.303Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bdexkdarn8kattofixl65rzm0p2ojclf",
+    "fields": {
+        "session_data": "ZTJlODk3ZWI2MWM3YmIwMDg4NzYxNDVkOTBhMjExNzc5ODk4YTMzMzp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiMThiNWY5MTU2MjgzZGQyYTI3NmZiOGJmYzRmNjlhNGY4OTJjYzc2OSIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
+        "expire_date": "2018-02-18T19:14:05.345Z"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2018-02-04T19:28:34.701Z",
+        "user": [
+            "davidfelce"
+        ],
+        "content_type": [
+            "home",
+            "copy"
+        ],
+        "object_id": "1",
+        "object_repr": "Copy object",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2018-02-04T19:52:10.669Z",
+        "user": [
+            "davidfelce"
+        ],
+        "content_type": [
+            "home",
+            "copy"
+        ],
+        "object_id": "1",
+        "object_repr": "Copy object",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"intro\"]}}]"
+    }
+}
+]
