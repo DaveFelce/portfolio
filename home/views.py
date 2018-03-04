@@ -1,7 +1,10 @@
 from django.views import View
 from django.shortcuts import render, get_object_or_404
-
+from django.views.decorators.cache import cache_page
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.conf import settings
 from .models import Copy
+
 
 class Home(View):
     """Home page class-based view
