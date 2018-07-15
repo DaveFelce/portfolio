@@ -2,7 +2,7 @@ version: '2'
 
 services:
   webapp:
-    build: .
+    image: davefelce/portfolio_webapp
     volumes:
       - .:/webapp
     ports:

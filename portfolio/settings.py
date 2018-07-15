@@ -25,7 +25,7 @@ SECRET_KEY = '3vycywvse9na-#h%@d4l(h+ygh7*&effhr+b!k7_(c838i9m7u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'david-felce-portfolio.eu-west-2.elasticbeanstalk.com']
 
 # Application definition
 
