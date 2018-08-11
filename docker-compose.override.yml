@@ -3,6 +3,8 @@ version: '2'
 services:
   webapp:
     image: davefelce/portfolio_webapp
+    volumes:
+      - .:/webapp
     ports:
       - "8005:8001"
       - "8085:8082"
