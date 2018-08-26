@@ -3,6 +3,8 @@ version: '2'
 services:
   webapp:
     image: davefelce/portfolio_webapp
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
     ports:
       - "8005:8001"
       - "8085:8082"
