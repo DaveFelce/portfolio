@@ -2,9 +2,13 @@ version: '2'
 
 services:
   webapp:
+    command: bash -c "sleep 10 && python3 /webapp/manage.py migrate && python3 /webapp/manage.py loaddata /webapp/fixtures/latest.json && python3 /webapp/manage.py collectstatic --noinput && python3 /webapp/manage.py runserver 0:8000"
     image: davefelce/portfolio_webapp
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
     volumes:
       - .:/webapp
     ports:
       - "8005:8001"
       - "8085:8082"
+      - "8000:8000"
