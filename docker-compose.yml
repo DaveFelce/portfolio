@@ -2,6 +2,7 @@ version: '2'
 
 services:
   webapp:
+    command: bash -c "sleep 10 && python3 /webapp/manage.py migrate && python3 /webapp/manage.py loaddata /webapp/fixtures/latest.json && python3 /webapp/manage.py collectstatic --noinput && /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"
     image: davefelce/portfolio_webapp
     environment:
       - SECRET_KEY=${SECRET_KEY}

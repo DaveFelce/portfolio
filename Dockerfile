@@ -1,7 +1,7 @@
 FROM python:3.5
 
 # Nginx section
-ENV NGINX_VERSION 1.11.10-1~jessie
+ENV NGINX_VERSION 1.15.2-1~jessie
 
 RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 \
     && echo "deb http://nginx.org/packages/mainline/debian/ jessie nginx" >> /etc/apt/sources.list \
@@ -30,20 +30,24 @@ COPY ./configs/nginx/conf.d/default.conf /etc/nginx/conf.d/
 # Django section
 ENV PYTHONBUFFERED 1
 ENV APPLICATION_ROOT /webapp/
-
 RUN mkdir -p $APPLICATION_ROOT
 WORKDIR $APPLICATION_ROOT
 COPY requirements.txt $APPLICATION_ROOT
 RUN pip install -r requirements.txt
+
+# Add site
 ADD . $APPLICATION_ROOT
-COPY docker-entrypoint.sh /usr/local/bin/
+RUN chown -R www-data $APPLICATION_ROOT
+
 RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
 COPY ./configs/supervisor/supervisord.conf /etc/supervisor/conf.d/
+RUN chown www-data db.sqlite3
+RUN chown -R www-data media
 RUN mkdir /shared
 RUN chmod 777 /shared
 
 # Expose ports for nginx
 EXPOSE 8082 443
 
-# Django entrypoint
-ENTRYPOINT ["docker-entrypoint.sh"]
+# Run
+CMD [ "/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf" ]
